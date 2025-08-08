@@ -1,20 +1,25 @@
+// crear constantes o let
 const inputAmigo = document.getElementById ("amigo");
 const ulListaAmigos = document.getElementById ("listaAmigos");
 const ulresultado = document.getElementById ("resultado");
+//crear lista de amigos
 const listaAmigos = [];
 
-
+// funcion para agregar amigos mediante el boton
 function agregarAmigo () {
-      if (!inputAmigo.value) {
+      
+    // en caso de que no agregue texto, que salga una alerta 
+    if (!inputAmigo.value) {
     alert ("Falta agregar un nombre");
    } else {
+    // mostrar en pantalla, en forma de lista, abajo esta por la version foreach
     listaAmigos.push(inputAmigo.value);
     ulListaAmigos.innerHTML += `<li>${inputAmigo.value}<li>`;
     limpiarCaja ();
    }
 return   
 }
-
+//funcion para sortear amigos, que solo permita cuando son dos o mas persona--
 function sortearAmigo () {
     if (listaAmigos.length < 2){
     alert ("Para generar el sorteo se necesitan dos participantes");
@@ -24,7 +29,7 @@ function sortearAmigo () {
     ulresultado.innerHTML = `<li>El amigo secreto es: ${amigoSecreto}</li>`;
 return}
 }
-
+// funcion para limpiar la caja de input
 function limpiarCaja (){
     inputAmigo.value = "";
     return
@@ -32,34 +37,13 @@ function limpiarCaja (){
 
 
 
-
-
-
-
-/*let amigos = []
-
-function agregarAmigo () {
-    let nuevoAmigo = document.getElementById ('amigo').value ;
-    if (nuevoAmigo !== "") {
-       amigos.push (nuevoAmigo);
-       console.log (amigos);
-       actualizarLista ();
-       limpiarCaja ();
-    } else {
-    alert ("No ingreso un nombre");
-    }
-    return
-}
-function limpiarCaja () {
-    document.querySelector ('#amigo').value= "";
-}
+/*
 
 function actualizarLista() {
-    let lista = document.getElementById("listaAmigos");
-    lista.innerHTML = ""; 
-    amigos.forEach(nuevoAmigo => {
+    ulista.innerHTML = ""; 
+    listaAmigos.forEach(inputAmigo => {
         let li = document.createElement("li");
-        li.textContent = nuevoAmigo;
+        li.textContent = inputAmigo;
         lista.appendChild(li);
     });
 }*/
